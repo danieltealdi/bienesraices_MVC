@@ -5,7 +5,9 @@ use MVC\Router;
 class PropiedadController{
 
     public static function index(Router $router){
-        $router->render();
+        //echo "Admin";
+        //debugear($router);
+        $router->render('propiedades/admin');
     }
     public static function crear(){
         echo "Crear Propiedad";

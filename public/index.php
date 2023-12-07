@@ -8,7 +8,7 @@ use Controllers\PropiedadController;
 $router = new Router();
 //debugear($router);
 
-$router->get('/admin/', [PropiedadController::class, 'index()']);
+$router->get('/admin/', [PropiedadController::class, 'index']);
 //$router->get('/admin/', "función admin");
 $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
 //$router->get('/propiedades/crear', "función crear");
