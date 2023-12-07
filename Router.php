@@ -41,12 +41,23 @@ class Router
         
 
     }
-    public function render($view){
-        //var_dump(__DIR__ . "/views/$view.php"); die;
+    public function render($view, $datos=[]){
+        //debugear($datos);
+        foreach($datos as $key=>$value){
+            $$key=$value;
+        }
+        //Código alternativo, por ahora funciona igual
+        //Si luego falla utilizar el que está comentado
+        //no funciona
+        //$contenido = file_get_contents(__DIR__ . "/views/$view.php");
+        //include __DIR__ . "/views/layout.php";
+    
+        
         ob_start();
         include __DIR__ . "/views/$view.php";
         $contenido=ob_get_clean();
         include __DIR__ . "/views/layout.php";
+        
     
     }
 
