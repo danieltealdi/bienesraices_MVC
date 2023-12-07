@@ -1,0 +1,20 @@
+{
+    "name": "danieltealdi/bienesraices",
+    "description": "Bienesraices con poo",
+    "authors": [
+        {
+            "name": "Daniel Tealdi",
+            "email": "daniel@danieltealdi.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "autoload":{
+        "psr-4":{
+            "Model\\":"./models",
+            "MVC\\":"./",
+            "Controllers\\":"./Controllers"
+        }
+    }
+}
