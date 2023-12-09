@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'danieltealdi/bienesraices',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'f0a10ac419e572f38b39d4e69133eac267e55432',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'danieltealdi/bienesraices' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'f0a10ac419e572f38b39d4e69133eac267e55432',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

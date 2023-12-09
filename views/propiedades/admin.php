@@ -3,15 +3,15 @@
     <main class="contenedor seccion">
         <h1>Administrador de Bienes Raices</h1>
         <?php 
-            if($mensaje){
+            if(true){
             $mensaje = mostrarNotificacion( intval( $resultado) );
             if($mensaje) { ?>
-                <p class="alerta exito"><?php echo s($mensaje); ?></p>
+                <p class="alerta exito"><?php echo ($mensaje); ?></p>
             <?php } }
         ?>
            
 
-        <a href="/admin/propiedades/crear.php" class="boton boton-verde">Nueva Propiedad</a>
+        <a href="/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
         <a href="/admin/vendedores/crear.php" class="boton boton-amarillo">Nuevo Vendedor</a>
 
         <h2>Propiedades</h2>

@@ -44,7 +44,7 @@
             }
 
             // Guarda la imagen en el servidor
-            $image->save(CARPETA_IMAGENES . $nombreImagen);
+            $image->save(CARPETA_IMAGENES . '/' . $nombreImagen);
 
             // Guarda en la base de datos
             $propiedad->guardar();

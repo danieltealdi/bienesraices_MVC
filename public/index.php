@@ -9,11 +9,10 @@ $router = new Router();
 //debugear($router);
 
 $router->get('/admin/', [PropiedadController::class, 'index']);
-//$router->get('/admin/', "función admin");
+$router->post('/admin/', [PropiedadController::class, 'index']);
 $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
-//$router->get('/propiedades/crear', "función crear");
+$router->post('/propiedades/crear', [PropiedadController::class, 'crear']);
 $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
-//$router->get('/propiedades/actualizar', "función actualizar");
-//call_user_func([PropiedadControler::class, 'index'], $this);
+$router->post('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
 
 $router->comprobarRutas();

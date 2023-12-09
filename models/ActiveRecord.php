@@ -37,7 +37,7 @@ class ActiveRecord{
         $resultado=self::$db->query($query);
         //debugear($resultado);
         if ($resultado) {
-            header('location: /admin/index.php?mensaje=2');
+            header('location: /admin/?mensaje=2');
         }
         //return $resultado;        
     }
@@ -53,7 +53,7 @@ class ActiveRecord{
         $query .=" ' ) ";
         $resultado=self::$db->query($query);
         if ($resultado) {
-            header('location: /admin/index.php?mensaje=1');
+            header('location: /admin/?mensaje=1');
         }
     }
 
