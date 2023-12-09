@@ -10,57 +10,72 @@ function incluirTemplate(string $nombre, bool $inicio = false)
     include TEMPLATES_URL . "/{$nombre}.php";
 }
 
-function estaAutenticado(){
+function estaAutenticado()
+{
     session_start();
 
     // echo "<pre>";
     // var_dump($_SESSION);
     // echo "</pre>";
-    
-    if(!$_SESSION['login']) {
-        header('location:/');
-    } 
 
+    if (!$_SESSION['login']) {
+        header('location:/');
+    }
 }
 
-function debugear($variable){
+function debugear($variable)
+{
     echo "<pre>";
     var_dump($variable);
     echo "</pre>";
     exit;
 }
 
-function s($str){    
+function s($str)
+{
     return htmlspecialchars($str);
 }
 
-function validarTipos($tipo){
-    $tipos=['vendedor', 'propiedad'];
+function validarTipos($tipo)
+{
+    $tipos = ['vendedor', 'propiedad'];
     return in_array($tipo, $tipos);
 }
 
-function mostrarNotificacion($codigo){
-    $mensaje='';
-    switch($codigo){
+function mostrarNotificacion($codigo)
+{
+    $mensaje = '';
+    switch ($codigo) {
         case 1:
-            $mensaje='Creado Correctamente';
+            $mensaje = 'Creado Correctamente';
             break;
-        
+
         case 2:
-            $mensaje='Actualizado Correctamente';
+            $mensaje = 'Actualizado Correctamente';
             break;
-        
+
         case 3:
-            $mensaje='Eliminado Correctamente';
+            $mensaje = 'Eliminado Correctamente';
             break;
-        
+
         case 4:
-            $mensaje='Formato erroneo';
+            $mensaje = 'Formato erroneo';
             break;
         default:
-            $mensaje=NULL;
+            $mensaje = NULL;
             break;
-        }    
-    
+    }
+
     return $mensaje;
+}
+function validarORedireccionar(string $url)
+{
+    // Verificar el id
+    $id =  $_GET['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+    if (!$id) {
+        header("Location: {$url}");
+    }
+
+    return $id;
 }

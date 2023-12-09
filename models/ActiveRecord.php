@@ -5,6 +5,8 @@ class ActiveRecord{
     protected static $columnasDB=[];
     protected static $errores;
     protected static $tabla='';
+    protected $id;
+    protected $imagen;
     
 
     public static function setDB($database){
@@ -67,9 +69,9 @@ class ActiveRecord{
             if(static::$tabla==='propiedades'){
                 $this->borrarImagen();
             }
-            header('location: /admin/index.php?mensaje=3');
+            header('location: /admin/?mensaje=3');
         }else{
-            header('location: /admin/index.php?mensaje=4');
+            header('location: /admin/?mensaje=4');
         }
     }
 
@@ -132,7 +134,7 @@ class ActiveRecord{
     }
 
     public static function find($id){
-        $consulta = "SELECT * FROM " . static::$tabla . " WHERE id = ${id}";
+        $consulta = "SELECT * FROM " . static::$tabla . " WHERE id = {$id}";
         $resultado=self::consultarSQL($consulta);
         return array_shift($resultado);
     }
