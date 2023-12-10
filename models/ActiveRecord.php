@@ -63,8 +63,9 @@ class ActiveRecord{
         $query = "DELETE FROM " . static::$tabla . " WHERE id = "; 
         $query .= self::$db->escape_string($this->id);
         $query .= " LIMIT 1";
-        //debugear($query);
-        $resultado=self::$db->query($query);        
+        var_dump($query);
+        $resultado=self::$db->query($query); 
+        //debugear($resultado);       
         if ($resultado) {
             if(static::$tabla==='propiedades'){
                 $this->borrarImagen();

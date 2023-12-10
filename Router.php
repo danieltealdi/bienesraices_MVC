@@ -23,10 +23,10 @@ class Router
 
         $urlActual = $_SERVER['REQUEST_URI'] ?? "/public/";
         $urlActual=parse_url($urlActual)['path'];
-        //debugear($urlActual);
+        //var_dump($urlActual);
 
         $metodo = $_SERVER['REQUEST_METHOD'];
-        //debugear($metodo);
+        //var_dump($metodo);
 
         if ($metodo === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? NULL;
@@ -47,6 +47,9 @@ class Router
     }
     public function render($view, $datos = [])
     {
+        //var_dump("estoy en render");
+        //var_dump($view);
+        //echo "<br>";
         //debugear($datos);
         foreach ($datos as $key => $value) {
             $$key = $value;

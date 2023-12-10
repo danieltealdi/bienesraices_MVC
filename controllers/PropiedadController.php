@@ -14,7 +14,7 @@ class PropiedadController
     public static function index(Router $router)
     {
         $propiedades = Propiedad::all();
-
+        $vendedores = Vendedores::all();
         $resultado = $_GET['mensaje'] ?? null;
         //debugear($resultado);
         //$resultado=null;
@@ -22,6 +22,7 @@ class PropiedadController
         //debugear($router);
         $router->render('propiedades/admin', [
             'propiedades' => $propiedades,
+            'vendedores' => $vendedores,
             'resultado' => $resultado
         ]);
     }
