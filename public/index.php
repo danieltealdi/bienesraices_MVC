@@ -7,6 +7,7 @@ use Controllers\PropiedadController;
 
 $router = new Router();
 //debugear($router);
+//admin al ser un directorio hay que agregarle / al final si no no lo reconoce
 
 $router->get('/admin/', [PropiedadController::class, 'index']);
 $router->post('/admin/', [PropiedadController::class, 'index']);
