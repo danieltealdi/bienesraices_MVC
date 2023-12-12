@@ -2,25 +2,7 @@
 <section class="contenedor seccion">
 <h2 class="fw-300 centrar-texto">Más Sobre Nosotros</h2>
 
-<div class="iconos-nosotros">
-    <div class="icono">
-        <img src="/build/img/icono1.svg" alt="Icono Seguridad">
-        <h3>Seguridad</h3>
-        <p>Quasi quibusdam, quos deserunt, recusandae iusto dolorem voluptatibus quaerat veritatis consectetur culpa sit dignissimos maiores iure id, magnam non voluptatum molestiae doloremque.</p>
-    </div>
-
-    <div class="icono">
-        <img src="/build/img/icono2.svg" alt="Icono Mejor Precio">
-        <h3>El Mejor Precio</h3>
-        <p>Quasi quibusdam, quos deserunt, recusandae iusto dolorem voluptatibus quaerat veritatis consectetur culpa sit dignissimos maiores iure id, magnam non voluptatum molestiae doloremque.</p>
-    </div>
-
-    <div class="icono">
-        <img src="/build/img/icono3.svg" alt="Icono a Tiempo">
-        <h3>A Tiempo</h3>
-        <p>Quasi quibusdam, quos deserunt, recusandae iusto dolorem voluptatibus quaerat veritatis consectetur culpa sit dignissimos maiores iure id, magnam non voluptatum molestiae doloremque.</p>
-    </div>
-</div>
+<?php include 'iconos.php'; ?>
 </section>
 
 <main class="seccion contenedor">
@@ -32,7 +14,7 @@
 
 
 <div class="ver-todas">
-    <a href="anuncios.php" class="boton boton-verde">Ver Todas</a>
+    <a href="/propiedades" class="boton boton-verde">Ver Todas</a>
 </div>
 </main>
 

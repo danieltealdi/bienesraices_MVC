@@ -26,7 +26,7 @@
                     </ul>
 
 
-                    <a href="anuncio.php?id=<?php echo $propiedad->id; ?>" class="boton boton-amarillo d-block">Ver Propiedad</a>
+                    <a href="propiedad?id=<?php echo $propiedad->id; ?>" class="boton boton-amarillo d-block">Ver Propiedad</a>
                 </div>
             </div>
 

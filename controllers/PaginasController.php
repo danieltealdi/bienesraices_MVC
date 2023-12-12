@@ -18,27 +18,42 @@ class PaginasController{
     }
 
 
-    public static function nosotros(){
-        echo "<h1>Página de nosotros</h1>";
+    public static function nosotros(Router $router){
+        $router->render('paginas/nosotros');
     }
 
-    public static function propiedades(){
-        echo "<h1>Página de propiedades</h1>";
+    public static function propiedades(Router $router){
+        $propiedades=Propiedad::all();
+        $router->render('paginas/propiedades', [            
+            'propiedades'=>$propiedades,
+
+        ]);
     }
 
-    public static function propiedad(){
-        echo "<h1>Página de propiedad</h1>";
+    public static function propiedad(Router $router){
+        $id=validarORedireccionar('/propiedades');
+        //var_dump($id); //die;
+        $propiedad=Propiedad::find($id);
+        //var_dump($propiedad); //die;
+        $router->render('paginas/propiedad', [            
+            'propiedad'=>$propiedad,
+
+        ]);
     }
 
-    public static function blog(){
-        echo "<h1>Página de blog</h1>";
+    public static function blog(Router $router){
+        $router->render('paginas/blog', [
+            
+        ]);
     }
 
-    public static function entrada(){
-        echo "<h1>Página de entrada</h1>";
+    public static function entrada(Router $router){
+        $router->render('paginas/entrada', [
+            
+        ]);
     }
 
-    public static function contacto(){
+    public static function contacto(Router $router){
         echo "<h1>Página de contacto</h1>";
     }
 
