@@ -48,7 +48,7 @@ class Router
     public function render($view, $datos = [])
     {
         //var_dump("estoy en render");
-        //var_dump($view);
+        //var_dump($view); die;
         //echo "<br>";
         //debugear($datos);
         foreach ($datos as $key => $value) {

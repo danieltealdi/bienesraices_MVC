@@ -3,7 +3,7 @@
         'name' => 'danieltealdi/bienesraices',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f0a10ac419e572f38b39d4e69133eac267e55432',
+        'reference' => '5011d351de16b9d1de8b7321d550d8916f49525a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'danieltealdi/bienesraices' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f0a10ac419e572f38b39d4e69133eac267e55432',
+            'reference' => '5011d351de16b9d1de8b7321d550d8916f49525a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
