@@ -1,6 +1,6 @@
-node_modules/
-node_modules/
-vendor/
+/node_modules/
+/node_modules/
+/vendor/
 
 
 # .v4p backup files
