@@ -11,12 +11,16 @@ class Router
     {
 
         $this->rutasGET[$url] = $fn;
+        //var_dump('get' . $this->rutasGET[$url]);
+
     }
     public function post($url, $fn)
     {
 
         $this->rutasPOST[$url] = $fn;
+        //var_dump('post' . $this->rutasPOST[$url]);
     }
+
 
     public function comprobarRutas()
     {
