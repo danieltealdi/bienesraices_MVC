@@ -4,11 +4,13 @@
 .webp .inicio {
     background-image: url(../img/header.webp);
 }
-
+.logo{
+    width:33%;
+}
 .header {
     background-color: $grisOscuro;
     padding: 1rem 0 3rem 0;
-
+    
     &.inicio {
         background-position: center center;
         background-size: cover;

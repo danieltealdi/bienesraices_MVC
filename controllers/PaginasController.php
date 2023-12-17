@@ -60,34 +60,54 @@ class PaginasController
 
     public static function contacto(Router $router)
     {
+
         //var_dump($_SERVER['REQUEST_METHOD']);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $mail = new PHPMailer();            
+            $resultado = null;
+            $mensaje = null;
+            $respuestas = $_POST['contacto'];
+            //debugear($respuestas);
+            $mail = new PHPMailer();
             $mail->isSMTP();
             $mail->Host = 'sandbox.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
             $mail->Port = 2525;
             $mail->Username = '1f862d49f99af1';
             $mail->Password = '70947adcb12ba0';
-
+            
             $mail->setFrom('admin@bienesraices.com');
             $mail->addAddress('admin@bienesraices.com', 'Bienesraices.com');
-            $mail->Subject='Tienes un nuevo mensaje';
-            $mail->isHTML(true); 
-            $mail->CharSet='UTF-8';
-            $mail->Body    = '<html><p>This is the HTML message body <b>in bold!</b><p></html>';
-            if($mail->send()){
-                echo('Mensaje enviado');
-            }else{
-                echo('El mensaje no se pudo enviar');
+            $mail->Subject = 'Tienes un nuevo mensaje';
+            $mail->isHTML(true);
+            $mail->CharSet = 'UTF-8';
+
+            $contenido = '<html>';
+            $contenido .= '<p><b>Correo de contacto</b><p>';
+            $contenido .= '<p>Nombre: ' . $respuestas['nombre'] . '</p>';
+            $contenido .= '<p>Mensaje: ' . $respuestas['mensaje'] . '</p>';
+            $contenido .= '<p>Compra o vende: ' . $respuestas['tipo'] . '</p>';
+            $contenido .= '<p>Precio o presupuesto: ' . $respuestas['cantidad'] . '</p>';
+            if ($respuestas['contacto'] === 'telefono') {
+                $contenido .= '<p>Eligió ser contactado por teléfono</p>';
+                $contenido .= '<p>Telefono: ' . $respuestas['telefono'] . '</p>';
+                $contenido .= '<p>Fecha: ' . $respuestas['fecha'] . '</p>';
+                $contenido .= '<p>Hora: ' . $respuestas['hora'] . '</p>';
+            } else {
+                $contenido .= '<p>Eligió ser contactado por e-mail</p>';
+                $contenido .= '<p>E-Mail: ' . $respuestas['email'] . '</p>';
             }
-
-
-
-
-            
+            $contenido .= '<html>';
+            $mail->Body    = $contenido;
+            $resultado = $mail->send();
+            if ($resultado === true) {
+                $mensaje = 'exito';
+            } else if (isset($resultado)) {
+                $mensaje = 'error';
+            }
         }
-        //var_dump("estoy aqui"); die;
-        $router->render('paginas/contacto', []);
+
+        $router->render('paginas/contacto', [
+            'mensaje' => $mensaje
+        ]);
     }
 }

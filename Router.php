@@ -24,6 +24,9 @@ class Router
 
     public function comprobarRutas()
     {
+        session_start();
+        $auth=$_SESSION['login']??null;
+        $rutasProtegidas=['/admin/'];
 
         $urlActual = $_SERVER['REQUEST_URI'] ?? "/public/";
         $urlActual=parse_url($urlActual)['path'];
